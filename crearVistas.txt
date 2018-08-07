@@ -1,0 +1,22 @@
+function(doc) {
+	var bool = false;
+	var tags = ["GOL","RUSIA2018","FCFSELECCIONCOL","PARTIDO"]; //SECCION DONDE SE DEBEN COLOCAR LAS PALABRAS CLAVES
+	var str = doc.text.replace(/[^ÑñáéíóúÁÉÍÓÚa-zA-Z 0-9.]+/g,' ');
+	str = str.toUpperCase()
+	for(var i=0; i<tags.length; i+=1){
+		if(str.indexOf(tags[i]) !== -1 !== false){
+			bool = true;
+			break;
+		}
+	}
+	if(bool !== false){
+		emit(doc._id, {
+		id: doc._id,
+		texto: str,
+		lenguaje: doc.lang,
+		pais: doc.place.country, 
+		codigo_pais: doc.place.country_code,
+		fecha: doc.created_at,
+		coordenadas: doc.coordinates});
+	}
+}
