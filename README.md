@@ -3,8 +3,8 @@
 PROYECTO FINAL INTELIGENCIA DE NEGOCIOS
 
 Participantes
--Pilatuña Isaac
 
+-Pilatuña Isaac
 -Sandoval Leonardo
 
 
